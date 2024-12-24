@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Trò chơi đoán số: Máy tính tự động tạo ra 1 số correct bất kỳ từ 1 đến 20. Người dùng nhập vào 1 số answer. Nếu
+        answer bằng correct → in ra “Đoán đúng”. Ngược lại → in ra “Đoán sai” và yêu cầu nhập lại answer. Nếu nhập sai
+        answer quá 5 lần → in ra “Bạn đã thua cuộc”.</h3>
+
+
+    <script>
+        let random = Math.floor(Math.random() * 20) + 1;
+        let input;
+        for(let i = 1 ; i <= 5 ; i++){
+            input = Number(prompt('Nhap so : '));
+            if(input === random){
+                console.log('Đoán đúng')
+                break;
+            }else{
+                console.log('Đoán sai')
+            }
+        }
+        
+        console.log(random);
+        console.log('Bạn đã thua cuộc')
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //nhap mot chuoi (den so am thi dung)
+    //tinh tong 5 so dau
+
+    <script>
+        let n;
+        let sum = 0;
+        let count = 1;
+        do{
+            n = Number(prompt("Nhap vao so: "))
+            console.log(n);
+            if(count <= 5){
+                sum += n;
+            }
+            count++;
+        }while(n > 0)
+        console.log('Tong '+sum);
+    </script>
+</body>
+</html>

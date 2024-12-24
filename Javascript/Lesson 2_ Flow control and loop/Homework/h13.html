@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào 3 số a, b, x (a < b). Tìm trong khoảng a, b số nhỏ nhất mà chia hết cho x.</h3>
+
+    <script>
+        let a = prompt('Nhap so a ( a < b ): ')
+        let b = prompt('Nhap so b ( a < b ): ')
+        let x = prompt('Nhap so x : ')
+
+        a = Number(a);
+        b = Number(b);
+        x = Number(x);
+
+        if(a > b){
+            console.log('Yeu cau a < b')
+        } else if (a < b){
+            for(let i = a ; i <= b ; i++){
+                if(i % x === 0 ){
+                    console.log(i);
+                    break;
+                }
+            }
+        } else {
+            console.log('Khong co gia tri nao chia het cho x')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Tạo 1 biến a có giá trị là 1 số tự nhiên ngẫu nhiên trong [5, 10]. Hãy nhập vào số n cho đến khi giá trị của n bằng a.</h3>
+
+    <script>
+        let a = Math.floor(Math.random() * 6) + 5;
+        let n;
+        do{
+            n = Number(prompt('Nhap n : '))
+        }while(n !== a);
+        console.log('random number la : ' + a);
+        console.log('Nhap dung ruiiiii ');
+    </script>
+</body>
+</html>

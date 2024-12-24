@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Nhập vào 2 số m, n (m > 0, n > 0). Tìm ước chung lớn nhất, bội chung nhỏ nhất của m, n.</h3>
+
+    <script>
+        let m, n;
+        let ucll = 1;
+        do {
+            m = Number(prompt('Nhap so m'));
+            n = Number(prompt('Nhap so n'));
+        } while (m <= 0 || n <= 0);
+
+        for (let i = 0; i <= m && i <= n; i++) {
+            if (m % i === 0 && n % i === 0){
+                ucll = i;
+            }
+        }
+        console.log(ucll + ' la UCLL')
+        let bcnn = (m*n)/ucll;
+        console.log(bcnn + ' la BCNN')
+
+    </script>
+</body>
+
+</html>

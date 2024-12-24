@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào chuỗi s (chỉ gồm chữ số) và số l. Hãy thêm vào đầu chuỗi s ký tự 0 cho đến khi độ dài chuỗi s >= l.</h3>
+    <script>
+        let s =prompt('Nhap chuoi s ( Chi gom chu so ): ');
+        let l = Number(prompt('Nhập so l: '));
+
+        while (s.length <= l) {
+            s += '0';
+        }
+        console.log(s);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào 2 số 0 <= x < y <= 100. Hãy tăng dần giá trị của x, giảm dần giá trị của y và in ra các giá trị của x và y trong mỗi lần lặp cho đến khi x >= y.</h3>
+
+
+    <script>
+        let x = prompt('Nhap so x (0 <= x < y <= 100): ')
+        let y = prompt('Nhap so y (0 <= x < y <= 100): ')
+        x = Number(x);
+        y = Number(y);
+
+        if( x < 0 || y > 100 || x >= y){
+            console.log('Khong hop le')
+        }else{
+            while(x < y){
+                x++;
+                y--;
+                console.log('x = ' + x + ' va y = ' + y);
+            }
+        }
+    </script>
+</body>
+</html>

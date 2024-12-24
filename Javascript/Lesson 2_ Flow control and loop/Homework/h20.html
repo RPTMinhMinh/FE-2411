@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào số n (2 <= n <= 10). Hãy in ra bảng cửu chương của số n.</h3>
+
+
+    <script>
+        let n;
+        let mul = 1;
+        do{
+            n = Number(prompt('Nhap so a ( 2 <= n <= 10 ) : '))
+
+        }while(n < 2 || n > 10);
+
+        for(let i = 1 ; i <= 10 ; i++){
+            mul = n * i;
+            console.log(n + ' x ' + i + ' = ' + mul);
+        }
+    </script>
+</body>
+</html>

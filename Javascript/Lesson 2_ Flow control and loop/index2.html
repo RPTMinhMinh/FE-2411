@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h1>bai 2: thang cua nam</h1>
+
+<body>
+    <script>
+        let year = Number(prompt("Nhap vao nam: "))
+        let n = Number(prompt("Nhap vao ban phim so n (0 < n < 12): "))
+        switch (n) {
+            case 1, 3, 5, 7, 8, 10, 12:
+                console.log("thang co 31 ngay");
+                break;
+            case 4, 6, 9, 11:
+                console.log("Thang co 30 ngay");
+                break;
+            case 2:
+                if (year % 400 === 0 || (year % 4 === 0 && year % 100 != 0)) {
+                    console.log("thang co 29 ngay");
+                } else {
+                    console.log("Thang co 28 ngay");
+                }
+                break;
+            default:
+                console.log("Gia tri khong hop le");
+                break;
+        }
+
+    </script>
+</body>
+
+</html>

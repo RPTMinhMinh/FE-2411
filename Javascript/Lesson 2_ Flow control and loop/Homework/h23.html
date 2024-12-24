@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Nhập vào số n (n >= 3). Hãy in ra màn hình hình tam giác vuông cân có độ dài cạnh góc vuông = n. VD: n = 3</h3>
+
+    <script>
+        let n;
+        let cols = '';
+        do{
+            n = Number(prompt('Nhập vào số n (n >= 3) : '))
+        }while(n < 3)
+
+        for(let i = 1 ; i <= n; i++){
+            for(let j = 1; j<= i; j++){
+                col += "* "
+            }
+            console.log(cols);
+        }
+    </script>
+</body>
+</html>
