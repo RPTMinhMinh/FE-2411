@@ -10,14 +10,14 @@
 
     <script>
         let n;
-        let cols = '';
         do{
             n = Number(prompt('Nhập vào số n (n >= 3) : '))
         }while(n < 3)
 
         for(let i = 1 ; i <= n; i++){
+            let cols = '';
             for(let j = 1; j<= i; j++){
-                col += "* "
+                cols += "* ";
             }
             console.log(cols);
         }
