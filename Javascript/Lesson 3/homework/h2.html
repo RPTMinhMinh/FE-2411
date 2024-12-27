@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Khai báo 1 mảng gồm 4 số bất kỳ khác nhau. -In ra phần tử có chỉ số 0 và 3 trong mảng. -Thực hiện phép cộng giữa phần tử có chỉ số 1 và 2. -Thực hiện hoán đổi giá trị của phần tử có chỉ số 1 và 3.</h3>
+
+    <script>
+        let arrs1 = [1,2,3,4];
+
+        console.log(arrs1[0])
+        console.log(arrs1[3])
+
+        let sum = arrs1[1] + arrs1[2];
+        console.log(sum);
+
+        let temp = arrs1[1];
+        arrs1[1] = arrs1[3]
+        arrs1[3] = temp
+        console.log(arrs1);
+    </script>
+</body>
+</html>

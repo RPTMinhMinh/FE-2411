@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let a = [1,3,4,5,6];
+        let newArr1 = [];
+        // them 1 phan tu vao dau mang
+        for(let i = 0; i < a.length; i++){
+            if(i === 0){
+                newArr1[i] = 10
+            }
+            newArr1[i + 1] = a[i];
+        }
+        console.log(newArr1);
+
+        let newArr2 = [];
+        // them mot phan tu o cuoi mang
+        for(let i = 0; i <= a.length; i++){
+            if(i === a.length){
+                newArr2[i] = 20;
+                break;
+            }
+            newArr2[i] = a[i];
+        }
+        console.log(newArr2);
+
+        let newArr3 = []
+        let count = 0;
+        //xoa 1 phan tu o dau mang
+        for(let i = 0; i < a.length - 1; i++){
+            if(i === count){
+                newArr3[i] = a[i + 1];
+                count++;
+            }
+        }
+        console.log(newArr3);
+
+        let newArr4 = [];
+        //xoa phan tu o cuoi
+        for(let i = 0; i < a.length - 1; i++){
+            newArr4[newArr4.length] = a[i]
+        }
+        console.log(newArr4);
+    </script>
+</body>
+</html>

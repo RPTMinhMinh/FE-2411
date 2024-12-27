@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Khai báo 1 mảng gồm các số bất kỳ. -Hãy in ra các số chẵn trong mảng đó. -Hãy tính tổng các phần tử trong mảng. -Hãy tìm phần tử nhỏ nhất trong mảng.</h3>
+
+
+    <script>
+        let arrs = [10,4,-7,9,100,3,-21,0,33]
+
+        for(let arr of arrs){
+            if(arr % 2 === 0){
+                console.log(arr);
+            }
+        }
+
+        console.log('-------------------------')
+
+        let sum = 0;
+        for(let arr of arrs){
+            sum += arr;
+        }
+        console.log(sum);
+
+        console.log('-------------------------')
+
+        let min = 10;
+        for(let arr of arrs){
+            if (arr < min){
+                min = arr;
+            }
+        }
+        console.log(min);
+    </script>
+</body>
+</html>

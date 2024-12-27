@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>2. Khai báo 1 mảng s gồm các chuỗi bất kỳ. Nhập vào 1 chuỗi text.
+        -Tìm 1 chuỗi đầu tiên có độ dài nhỏ nhất trong mảng.
+        -Tìm những chuỗi trong mảng có chứa giá trị text.
+        -Tạo mảng mới newS gồm các phần tử có giá trị là 3 ký tự đầu tiên của từng phần tử trong s.</h3>
+
+
+
+    <script>
+        let s = ["apple", "banana", "kiwi", "grape", "orange", "fig", "cherry", "blueberry", "mango", "strawberry", "abc"];
+        let text = prompt('Nhập vào 1 chuỗi text : ')
+        let min = s[0];
+        for (let element of s) {
+            if (element.length < min.length) {
+                min = element;
+            }
+        }
+        console.log('chuỗi đầu tiên có độ dài nhỏ nhất trong mảng : ' + min);
+
+        let check = false;
+        for(let element of s){
+            if(s.includes(text)){
+                console.log('chuỗi trong mảng có chứa giá trị : ' + text)
+                check = true;
+                break;
+            }
+        }
+        if(!check){
+            console.log('chuỗi trong mảng ko có chứa giá trị : ' + text)
+        }
+
+        let newS = [];
+        for(let i = 0; i < s.length ; i++){
+            newS.splice(0, 0, s[0], s[1], s[2]);
+            break;
+        }
+        console.log(newS);
+
+    </script>
+</body>
+
+</html>

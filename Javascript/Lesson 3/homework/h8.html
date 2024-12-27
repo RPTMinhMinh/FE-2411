@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. Khai báo 1 mảng gồm các số bất kỳ. 
+        -Tính tích của các phần tử trong mảng đó.
+        -Tìm số nhỏ nhất mà chia hết cho 2 trong mảng.
+        -Tìm số lớn nhất mà chia hết cho 3 trong mảng.
+        -Tính giá trị trung bình của mảng.
+        -Lọc ra các số nguyên tố trong mảng.
+        -Kiểm tra xem trong mảng có số nhỏ hơn 10 hay không.
+        -Kiểm tra xem tất cả phần tử trong mảng có lớn hơn 20 không.
+        -Nhập vào số n cho đến khi n là 1 số trong mảng s.</h3>
+        
+
+
+        <script>
+            let arrs = [10,4,-7,9,100,3,-21,0,33];
+            console.log(arrs)
+            let mul = 1;
+            for(let arr of arrs){
+                mul *= arr
+            }
+            console.log(mul);
+
+            let min = arrs[0];
+            for(let arr of arrs){
+                if(arr % 2 === 0){
+                    if( arr < min ){
+                        min = arr;
+                    }
+                }
+            }
+            console.log(min);
+
+            let max = arrs[0];
+            for (let arr of arrs){
+                if (arr % 3 === 0){
+                    if ( arr > max ){
+                        max = arr;
+                    }
+                }
+            }
+            console.log(max);
+
+            let tbc = 0;
+            let sum = 0;
+            for(let arr of arrs){
+                sum += arr
+            }
+            tbc = sum/arrs.length;
+            console.log(tbc);
+
+            
+            for (let i  = 0 ; i < arrs.length ; i++){
+                let count = 0;
+                if(arrs[i] > 0){
+                    for(let j = 1 ; j <= arrs[i] ; j++){
+                        if(arrs[i] % j == 0){
+                            count++;
+                        }
+                    }
+                    if(count === 2){
+                        console.log('So nguyen to la: ' + arrs[i])
+                    }
+                }
+            }
+            
+            for(let arr of arrs){
+                if(arr < 10){
+                    console.log('Cac so nho hon 10 la: ' + arr);
+                }
+            }
+
+            for(let arr of arrs){
+                if( arr > 20 ){
+                    console.log('Cac so lon hon 20 la: ' + arr);
+                }
+            }
+
+            let n;
+            do{
+                n= Number(prompt('Nhap n : '));
+            }while(!arrs.includes(n))
+        </script>
+</body>
+</html>

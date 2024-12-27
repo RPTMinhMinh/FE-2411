@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>3. Nhập vào 2 dãy số d1, d2. Mỗi số trong mỗi dãy cách nhau bởi dấu ‘,’.
+        -Kiểm tra xem tất cả các giá trị số trong d1 có nằm trong d2 không.
+        -Kiểm tra xem có phần tử nào trong d2 chia hết cho tổng của d1 không.
+        -Tạo mảng mới gồm các số có giá trị là các số chia hết cho 2 lần lượt trong d2 và d1.
+        -Giả sử d1, d2 là các dãy số xếp theo thứ tự tăng dần. Hãy tạo ra 1 dãy số theo thứ tự tăng dần bao gồm các số của d1 và d2 (Sử dụng core của thuật toán Merge Sort).(https://www.geeksforgeeks.org/merge-sort/?ref=lbp)</h3>
+        
+    <script>
+        let input1 = prompt('Nhập vào dãy số d1 (mỗi số trong mỗi dãy cách nhau bởi dấu ‘,’) : ')
+        let input2 = prompt('Nhập vào dãy số d2 (mỗi số trong mỗi dãy cách nhau bởi dấu ‘,’) : ')
+
+        input1 = input1.split(',');
+        input2 = input2.split(',');
+
+        let d1 = []
+        let d2 = []
+        for(let element of input1){
+            element = Number(element);
+            d1.push(element);
+        }
+        console.log(d1)
+
+        for(let element of input2){
+            element = Number(element);
+            d2.push(element);
+        }
+        console.log(d2)
+
+        //Kiểm tra xem tất cả các giá trị số trong d1 có nằm trong d2 không.
+
+        let check = false;
+        for(let element of d1){
+            if(d2.includes(element)){
+                check= true;
+                console.log(element + ' co trong d2');
+            }
+        }
+        if(!check){
+            console.log('Khong co phan tu nao nam trong d2')
+        }
+
+        //Kiểm tra xem có phần tử nào trong d2 chia hết cho tổng của d1 không.
+
+        let sum = 0;
+
+        for(let element1 of d1){
+            sum += element1;
+        }
+        console.log(sum)
+        
+        for(let element2 of d2){
+            if(sum % element2 == 0 ){
+                console.log(element2 + ' chia het cho '+sum)
+            }
+        }
+
+        //Tạo mảng mới gồm các số có giá trị là các số chia hết cho 2 lần lượt trong d2 và d1
+
+        let d1New = []
+        let d2New = []
+        for(let element1 of d1){
+            if(element1 % 2 === 0){
+                d1New.push(element1)
+            }
+        }
+        console.log(d1New);
+
+        for(let element2 of d2){
+            if(element2 % 2 === 0){
+                d2New.push(element2)
+            }
+        }
+        console.log(d2New);
+
+        //
+    </script>
+</body>
+</html>

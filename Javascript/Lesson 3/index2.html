@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let a = [10, 4, -7, 9, 100, 3, -21, 0, 33];
+
+        let max = 10;
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] > max) {
+                max = a[i];
+            }
+        }
+
+        console.log('Phan tu lon nhat la : ' + max);
+
+        let min = 10;
+        for(let e of a){
+            if(e < min){
+                min = e;
+            }
+        }
+        console.log('Phan tu nho nhat la : ' + min);
+    </script>
+</body>
+
+</html>

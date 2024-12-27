@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Khai báo 1 mảng rỗng. Nhập vào số n (n > 0). Hãy điền n số có giá trị ngẫu nhiên vào trong mảng đó.</h3>
+
+    <script>
+        let arrs = [];
+        let n = Number(prompt('Nhap n ( n > 0 ) : '))
+        
+        for(let i = 0 ; i < n ; i++){
+            let random = Math.floor(Math.random() * 20) + 1;
+            arrs.push(random);
+        }
+        console.log(arrs);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Khai báo 1 mảng gồm 2 phần tử. Nhập vào số n (n > 2). Hãy thêm vào đầu mảng phần tử có giá trị ‘0’ cho đấu khi độ dài của mảng bằng n.</h3>
+
+    <script>
+        let arrs = [1, 2];
+        let n; 
+        do{
+            n = Number(prompt('Nhap n ( n > 2 ) : '));
+        }while(n <= 2)
+
+        for(let arr of arrs ){
+            if(arrs.length < n){
+                arrs.splice(1, 0, '0')
+            }
+        }
+        console.log(arrs);
+    </script>
+</body>
+</html>
