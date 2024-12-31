@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>5. Xây dựng chương trình quản lý kho hàng như sau:
+        -Cửa hàng gồm các thông tin: tên kho hàng, địa chỉ, người sở hữu, các mặt hàng trong kho.
+        -Mỗi mặt hàng gồm: mã mặt hàng, tên, loại mặt hàng, giá cả.
+        ```jsx
+
+        const storage = {
+        name: 'Fake Storage',
+        address: 'HN',
+        owner: 'Dung Tien',
+        items: [
+        {
+        id: 1, name: 'Product 1', category: 'Furniture', pricce: 20
+        },
+        {
+        id: 2, name: 'Product 2', category: 'Device', pricce: 110
+        },
+        {
+        id: 3, name: 'Product 3', category: 'Cloth', pricce: 2
+        },
+        ]
+        }
+        jsx```
+        *Xây dựng chương trình tương tác với kho hàng. Nhập vào action là yêu cầu ứng với các thao tác:
+        Action 1 -> Ý nghĩa: Sửa thông tin kho hàng
+        Action 2 -> Ý nghĩa: Tạo mặt hàng trong kho
+        Action 3 -> Ý nghĩa: Tìm kiếm mặt hàng
+        Action 4 -> Ý nghĩa: Xóa mặt hàng
+        -Sau khi thực hiện xong mỗi thao tác, nhập lại action để thực hiện các thao tác khác.
+        -Mô tả chi tiết
+        +action = 1 → Yêu cầu nhập lại tên kho hàng, địa chỉ, người sở hữu. In ra thông tin mới của kho hàng sau khi cập
+        nhật giá trị mới.
+        +action = 2 → Yêu cầu nhập mã mặt hàng, tên, loại, giá cả. In ra thông tin các mặt hàng đang có trong kho. Nếu
+        mã mặt hàng đã tồn tại → yêu cầu nhập lại.
+        +action = 3 → Yêu cầu nhập từ khóa tìm kiếm. In ra thông tin các mặt hàng có tên chứa từ khóa tìm kiếm. Nếu
+        không có từ khóa tìm kiếm → in ra toàn bộ mặt hàng.
+        +action = 4 → Yêu cầu nhập mã mặt hàng. Xóa mặt hàng có mã tương ứng. Nếu không tìm thấy mã mặt hàng cần xóa →
+        kết thúc.</h3>
+
+
+    <script src="./qlch.js"></script>
+    <script>
+
+
+        let choice;
+            do {
+                choice = Number(prompt('Nhập vào action ( 0. Thoat chuong trinh ; 1. Sửa thông tin kho hàng ; 2. Tạo mặt hàng trong kho ; 3. Tìm kiếm mặt hàng ; 4. Xóa mặt hàng )'))
+                console.log(choice);
+                switch (choice) {
+                    case 1:
+                        updateStore(storage);
+                        break;
+                    case 2:
+                        createItem(storage)
+                        break;
+                    case 3:
+                        searchItem(storage);
+                        break;
+                    case 4:
+                        deleteItem(storage);
+                        break;
+                }
+            } while (choice != 0);
+
+
+        function updateStore(storage) {
+            let input
+            do {
+                input = Number(prompt('Nhap vao gia tri can sua ( 1. name ; 2. Address ; 3. Owner ) : '))
+            } while (input > 3 || input < 1)
+
+            for (let element in storage) {
+                if (input === 1) {
+                    let updateName = prompt('Nhap vao ten cua hang moi');
+                    storage['name'] = updateName;
+                    break;
+                } else if (input === 2) {
+                    let updateAddress = prompt('Nhap vao dia chi cua hang moi')
+                    storage['address'] = updateAddress;
+                    break;
+                } else {
+                    let updateOwner = prompt('Nhap vao ten chu so huu cua hang moi')
+                    storage['owner'] = updateOwner;
+                    break;
+                }
+            }
+            console.log(storage);
+        }
+
+        function createItem(storage) {
+            let createId = Number(prompt('Nhap Id : '))
+            let createName = prompt('Nhap name : ')
+            let createCategory = prompt('Nhap category : ')
+            let createPrice = Number(prompt('Nhap price : '))
+            const newItem = {}
+
+
+
+            newItem['id'] = createId;
+            newItem['name'] = createName;
+            newItem['category'] = createCategory;
+            newItem['price'] = createPrice;
+            storage.items.push(newItem);
+            console.log(storage);
+        }
+
+        function searchItem(storage) {
+            let keyword = prompt('Nhap tu khoa: ')
+            let check = false;
+            for (let element of storage['items']) {
+                if (element['name'] === keyword || element['category'] == keyword || element['price'] === Number(keyword)) {
+                    check = true;
+                    console.log(element)
+                }
+            }
+            if (!check) {
+                console.log(storage['items'])
+            }
+        }
+
+        function deleteItem(storage) {
+            let del = Number(prompt('Nhap id can xoa'))
+            let check = false;
+            let result = []
+            for (let element of storage['items']) {
+                if (del === element['id']) {
+                    storage['items'].splice(del - 1, 1);
+
+                }
+            }
+            console.log(storage)
+        }
+    </script>
+</body>
+
+</html>

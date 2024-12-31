@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>3. Khai báo 1 function với đầu vào là day, month, year. Kiểm tra xem 3 giá trị đó có tạo thành 1 ngày, tháng năm
+        hợp lệ không.
+    </h3>
+
+
+    <script>
+        let day, month, year;
+        day = Number(prompt('Nhap ngay : '))
+        month = Number(prompt('Nhap thang : '))
+        year = Number(prompt('Nhap nam : '))
+
+        
+        function check(day, month, year) {
+
+            if (year > 2024 || year < 1000) {
+                console.log('Nam khong ton tai')
+            }else{
+
+                if(month < 1 || month > 12){
+                    console.log('Thang khong ton tai')
+
+                }else{
+                    if(month == 6 || month == 4 || month == 9 || month == 11){
+
+                        if(day < 1 || day > 30){
+                            console.log('Ngay khong ton tai')
+                        }else{
+                            console.log('Co ton tai ngay ' + day + ' / ' + month + ' / ' + year)
+                        }
+
+                    }else if(month == 2){
+
+                        if (year % 4 === 0) {
+
+                            if (day > 29 || day < 1) {
+                                console.log('Ngay khong phu hop');
+                            } else {
+                                console.log('Co ton tai ngay ' + day + ' / ' + month + ' / ' + year)
+                            }
+
+                        } else if (year % 100 === 0 && year % 400 === 0) {
+
+                            if (day > 29 || day < 1) {
+                                console.log('Ngay khong phu hop');
+                            } else {
+                                console.log('Co ton tai ngay ' + day + ' / ' + month + ' / ' + year)
+                            }
+
+                        } else {
+
+                            if (day > 28 || day < 1) {
+                                console.log('Ngay khong phu hop');
+                            } else {
+                                console.log('Co ton tai ngay ' + day + ' / ' + month + ' / ' + year)
+                            }
+                        }
+
+                    }else{
+
+                        if (day < 1 || day > 31) {
+                            console.log('Ngay khong phu hop');
+                        } else {
+                            console.log('Co ton tai ngay ' + day + ' / ' + month + ' / ' + year)
+                        }
+
+                    }
+                }
+            }
+        }
+        check(day,month,year)
+    </script>
+</body>
+
+</html>

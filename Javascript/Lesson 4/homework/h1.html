@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>1. Khai báo 1 function với đầu vào là 3 số a, b, c (a khác 0). Hãy tìm nghiệm của phương trình a.x^2 + b.x + c =
+        0 và đưa ra kết quả dưới dạng 1 mảng gồm các nghiệm của phương trình.
+    </h3>
+
+
+    <script>
+
+        let a, b, c;
+        a = Number(prompt('Nhap a ( voi a khac 0 ) : '))
+        b = Number(prompt('Nhap b : '))
+        c = Number(prompt('Nhap c : '))
+
+        function ptb2(a, b, c) {
+            let delta = (b * b) - (4 * a * c);
+            let result = [];
+            if (a == 0) {
+                console.log('Phuong trinh bac 1')
+                if (b == 0) {
+                    if (c == 0) {
+                        console.log('Phuong trinh vo so nghiem')
+                    } else {
+                        console.log('Phuong trinh vo nghiem')
+                    }
+                } else {
+                    let x = -c / b
+                    console.log('Phuong trinh co x = ' + x)
+                    result.push(x);
+                    console.log(result);
+                }
+            } else {
+                console.log('Phuong trinh bac 2');
+                let x1; 
+                if (delta > 0) {
+                    x1 = (-b + Math.sqrt(delta)) / (2 * a)
+                    let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+                    console.log('Phuong trinh co 2 nghiem: ' + x1 + ' va ' + x2)
+                    result.splice(0, 0, x1, x2);
+                    console.log(result);
+                } else if (delta == 0) {
+                    x1 = -b / (2 * a)
+                    console.log('Phuong trinh co 1 nghiem duy nhat: ' + x1)
+                    result.push(x1);
+                    console.log(result);
+                } else {
+                    console.log('Phuong trinh vo nghiem')
+                }
+            }
+        }
+
+        ptb2(a, b, c);
+
+    </script>
+</body>
+
+</html>

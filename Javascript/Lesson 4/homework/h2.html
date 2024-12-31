@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>2. Khai báo 1 function với đầu vào là 3 số a, b, c. Kiểm tra xem a, b, c có tạo thành 3 cạnh của tam giác không. Nếu tạo thành tam giác, đầu ra là true. Ngược lại, đầu ra là false.
+    </h3>
+
+    <script>
+        let a,b,c;
+        a = Number(prompt('Nhap a : '))
+        b = Number(prompt('Nhap b : '))
+        c = Number(prompt('Nhap c : '))
+        
+        function tamgiac(a,b,c){
+            let check = true;
+            if(a + b > c && b + c > a && c + a > b){
+                return check;
+            }else{
+                return !check;
+            }
+        }
+
+        console.log(tamgiac(a,b,c));
+    </script>
+</body>
+</html>
