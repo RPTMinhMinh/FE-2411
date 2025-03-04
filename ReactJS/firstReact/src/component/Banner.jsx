@@ -1,5 +1,7 @@
 import React from 'react'
-import page from './image/page.jpg'
+import page from '../image/page.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 export const Banner = () => {
     return (
         <>
